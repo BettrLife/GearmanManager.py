@@ -1,0 +1,2 @@
+__init__.py usr/share/pyshared/gearman_manager
+config.py.example etc/python-gearman-manager

@@ -1,0 +1,32 @@
+#+TITLE: Gearman Worker Manager
+
+* Synopsis
+
+python-gearman-manager -w ./workers -d
+
+Provides a fairly thin wrapper around gmtasks to daemonize a set of gearman
+workers.
+
+* Workers
+
+Workers should be placed one worker per file in the workers directory
+(see --worker-dir argument).  Files should be named for the gearman
+job they handle.
+
+Worker files should define a function doTask(worker, job, logger).  The only
+difference from a gmtasks Task callback is the addition of the logger argument,
+which is a logger adapter which adds information about the specific job (the
+unique job string) to the logging output.
+
+** Example Worker: reverse_string.py
+#+begin_src python
+  def doTask(worker, job, log):
+      log.debug("going to reverse "+job.data)
+      return job.data[::-1]
+#+end_src
+
+* Requirements
+
+ * python-daemon
+ * gmtasks
+ * pidfile

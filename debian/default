@@ -1,0 +1,2 @@
+# Set to yes once you've configured /etc/python-gearman-manager/config.py
+START=no

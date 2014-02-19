@@ -1,0 +1,12 @@
+# Example configuration file for python-gearman-manager
+# variables match the python names of the command line arguments
+
+# Set the directory to look in for worker definitions
+worker_dir = "/etc/python-gearman-manager/workers"
+
+# Set the logging level
+import logging
+verbose = logging.DEBUG
+
+# Where to send log output ("syslog", "stderr", or a file name)
+log_file = "syslog"

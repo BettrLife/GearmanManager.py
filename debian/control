@@ -1,0 +1,14 @@
+Source: python-gearman-manager
+Section: python
+Priority: extra
+Maintainer: M.J. Hoag <mj.hoag@bettrlife.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: https://github.com/BettrLife/GearmanManager.py
+
+Package: python-gearman-manager
+Architecture: all
+Depends: ${misc:Depends}, python-daemon
+Suggests: gearman-job-server
+Description: Python GearmanManager
+ Makes it easier to manage gearman workers in a Python environment.
